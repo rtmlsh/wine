@@ -2,5 +2,6 @@ env/
 .vscode/
 .idea
 venv
+index.html
 
 
