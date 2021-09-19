@@ -113,21 +113,38 @@
             </p>
           </div>
         </div>
+        {% for drink, description in store_goods.items() %}
+        <div class="col-12 section-title text-center mb-5">
+        <h2 class="d-block">{{drink}}</h2>
+        </div>
         <div class="row">
-          {% for index in range(6) %}
+          {% for feature in description %}
           <div class="col-lg-4 mb-5 col-md-6">
             <div class="wine_v_1 text-center pb-4 pt-5">
-              <img src="images/izabella.png" alt="Image" class="img-fluid">
+              {% if feature.Акция %}
+              <img src="assets/profitable.png" style="width:10rem;height: 10rem;position:absolute;right: -20px;top: -20px;">
+              <img src="images/{{feature.Картинка}}" alt="Image" class="img-fluid">
+               {% else %}
+              <img src="images/{{feature.Картинка}}" alt="Image" class="img-fluid">
+              {% endif %}
               <div>
-                <h3 class="heading mt-3 mb-3 text-dark">Изабелла</h3>
+                <h3 class="heading mt-3 mb-3 text-dark">{{feature.Название}}</h3>
+                {% if feature.Сорт %}
                 <p>
-                  Сорт винограда - Изабелла<br/>
-                  <span class="price">350 р.</span>
+                  Сорт винограда: {{feature.Сорт}}<br/>
+                  <span class="price">Цена: {{feature.Цена}} р.</span>
                 </p>
+                {% else %}
+                <p>
+                  <span class="price">Цена: {{feature.Цена}} р.</span>
+                </p>
+                {% endif %}
               </div>
             </div>
           </div>
-           {% endfor %}
+          {% endfor %}
+          {% endfor %}
+        </div>
         </div>
       </div>
     </div>
