@@ -3,6 +3,7 @@ env/
 .idea
 venv
 .DS_Store
+wine.xlsx
 index.html
 
 
