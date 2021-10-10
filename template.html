@@ -113,30 +113,30 @@
             </p>
           </div>
         </div>
-        {% for wine_category, characteristics in store_goods.items() %}
+        {% for wine_category, category_characteristics in store_goods.items() %}
         <div class="col-12 section-title text-center mb-5">
         <h2 class="d-block">{{wine_category}}</h2>
         </div>
         <div class="row">
-          {% for feature in characteristics %}
+          {% for characteristic in category_characteristics %}
           <div class="col-lg-4 mb-5 col-md-6">
             <div class="wine_v_1 text-center pb-4 pt-5">
-              {% if feature.Акция %}
+              {% if characteristic.Акция %}
               <img src="assets/profitable.png" style="width:10rem;height: 10rem;position:absolute;right: -20px;top: -20px;">
               <img src="images/{{feature.Картинка}}" alt="Image" class="img-fluid">
               {% else %}
               <img src="images/{{feature.Картинка}}" alt="Image" class="img-fluid">
               {% endif %}
               <div>
-                <h3 class="heading mt-3 mb-3 text-dark">{{feature.Название}}</h3>
-                {% if feature.Сорт %}
+                <h3 class="heading mt-3 mb-3 text-dark">{{characteristic.Название}}</h3>
+                {% if characteristic.Сорт %}
                 <p>
-                  Сорт винограда: {{feature.Сорт}}<br/>
-                  <span class="price">Цена: {{feature.Цена}} р.</span>
+                  Сорт винограда: {{characteristic.Сорт}}<br/>
+                  <span class="price">Цена: {{characteristic.Цена}} р.</span>
                 </p>
                 {% else %}
                 <p>
-                  <span class="price">Цена: {{feature.Цена}} р.</span>
+                  <span class="price">Цена: {{characteristic.Цена}} р.</span>
                 </p>
                 {% endif %}
               </div>
