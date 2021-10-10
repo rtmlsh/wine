@@ -6,11 +6,11 @@ import pandas
 from jinja2 import Environment, FileSystemLoader, select_autoescape
 
 
-def get_goods_description(products):
+def get_goods_description(goods_specification):
     store_goods = collections.defaultdict(list)
-    for product in products.to_dict(orient='records'):
-        category_name = product['Категория']
-        store_goods[category_name].append(product)
+    for specification in goods_specification.to_dict(orient='records'):
+        category_name = specification['Категория']
+        store_goods[category_name].append(specification)
     return store_goods
 
 
@@ -24,13 +24,13 @@ if __name__ == '__main__':
 
     foundation_year = 1921
 
-    products = pandas.read_excel(
+    goods_specification = pandas.read_excel(
         'wine.xlsx',
         usecols=['Категория', 'Название', 'Сорт', 'Цена', 'Картинка', 'Акция'],
         na_values=['N/A', 'NA'],
         keep_default_na=False
     )
-    store_goods = get_goods_description(products)
+    store_goods = get_goods_description(goods_specification)
 
     rendered_page = template.render(
         age_winery=datetime.date.today().year - foundation_year,

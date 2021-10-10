@@ -123,15 +123,15 @@
             <div class="wine_v_1 text-center pb-4 pt-5">
               {% if drink_specification.Акция %}
               <img src="assets/profitable.png" style="width:10rem;height: 10rem;position:absolute;right: -20px;top: -20px;">
-              <img src="images/{{feature.Картинка}}" alt="Image" class="img-fluid">
+              <img src="images/{{drink_specification.Картинка}}" alt="Image" class="img-fluid">
               {% else %}
-              <img src="images/{{feature.Картинка}}" alt="Image" class="img-fluid">
+              <img src="images/{{drink_specification.Картинка}}" alt="Image" class="img-fluid">
               {% endif %}
               <div>
                 <h3 class="heading mt-3 mb-3 text-dark">{{drink_specification.Название}}</h3>
                 {% if drink_specification.Сорт %}
                 <p>
-                  Сорт винограда: {{drink_data.Сорт}}<br/>
+                  Сорт винограда: {{drink_specification.Сорт}}<br/>
                   <span class="price">Цена: {{drink_specification.Цена}} р.</span>
                 </p>
                 {% else %}
