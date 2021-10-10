@@ -22,6 +22,8 @@ if __name__ == '__main__':
 
     template = env.get_template('template.html')
 
+    foundation_year = 1921
+
     products = pandas.read_excel(
         'wine.xlsx',
         usecols=['Категория', 'Название', 'Сорт', 'Цена', 'Картинка', 'Акция'],
@@ -31,7 +33,7 @@ if __name__ == '__main__':
     store_goods = get_goods_description(products)
 
     rendered_page = template.render(
-        age_winery=datetime.date.today().year - 1921,
+        age_winery=datetime.date.today().year - foundation_year,
         store_goods=store_goods
     )
 
