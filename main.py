@@ -9,8 +9,8 @@ from jinja2 import Environment, FileSystemLoader, select_autoescape
 def get_goods_description(products):
     store_goods = collections.defaultdict(list)
     for product in products.to_dict(orient='records'):
-        title = product['Категория']
-        store_goods[title].append(product)
+        category_name = product['Категория']
+        store_goods[category_name].append(product)
     return store_goods
 
 
