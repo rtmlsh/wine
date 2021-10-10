@@ -6,16 +6,6 @@ import pandas
 from jinja2 import Environment, FileSystemLoader, select_autoescape
 
 
-def read_excel():
-    products = pandas.read_excel(
-        'wine.xlsx',
-        usecols=['Категория', 'Название', 'Сорт', 'Цена', 'Картинка', 'Акция'],
-        na_values=['N/A', 'NA'],
-        keep_default_na=False
-    )
-    return products
-
-
 def get_goods_description(products):
     store_goods = collections.defaultdict(list)
     for product in products.to_dict(orient='records'):
@@ -32,7 +22,12 @@ if __name__ == '__main__':
 
     template = env.get_template('template.html')
 
-    products = read_excel()
+    products = pandas.read_excel(
+        'wine.xlsx',
+        usecols=['Категория', 'Название', 'Сорт', 'Цена', 'Картинка', 'Акция'],
+        na_values=['N/A', 'NA'],
+        keep_default_na=False
+    )
     store_goods = get_goods_description(products)
 
     rendered_page = template.render(
