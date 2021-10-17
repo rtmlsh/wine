@@ -22,7 +22,7 @@ if __name__ == '__main__':
 
     template = env.get_template('template.html')
 
-    foundation_year = 1921
+    foundation_year = 1920
 
     goods_specification = pandas.read_excel(
         'wine.xlsx',
