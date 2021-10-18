@@ -33,7 +33,7 @@ if __name__ == '__main__':
     store_goods = get_goods_description(goods_specification)
 
     rendered_page = template.render(
-        age_winery=datetime.date.today().year - foundation_year,
+        winery_age=datetime.date.today().year - foundation_year,
         store_goods=store_goods
     )
 
