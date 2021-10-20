@@ -1,3 +1,4 @@
+import argparse
 import collections
 import datetime
 from http.server import HTTPServer, SimpleHTTPRequestHandler
@@ -15,6 +16,9 @@ def get_goods_description(goods_specification):
 
 
 if __name__ == '__main__':
+    parser = argparse.ArgumentParser(description='Скрипт запускает сайт интернет-магазина')
+    parser.parse_args()
+
     env = Environment(
         loader=FileSystemLoader('.'),
         autoescape=select_autoescape(['html', 'xml'])

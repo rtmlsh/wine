@@ -2,6 +2,7 @@ env/
 .vscode/
 .idea
 venv
+.env
 .replit
 .DS_Store
 wine.xlsx
