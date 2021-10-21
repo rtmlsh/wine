@@ -17,8 +17,14 @@ def get_goods_description(goods_specification):
 
 
 if __name__ == '__main__':
-    parser = argparse.ArgumentParser(description='Скрипт запускает сайт интернет-магазина')
-    parser.add_argument('--path', help='Укажите свой путь до базы данных', default='wine.xlsx')
+    parser = argparse.ArgumentParser(
+        description='Скрипт запускает сайт интернет-магазина'
+    )
+    parser.add_argument(
+        '--path',
+        help='Укажите свой путь до базы данных',
+        default='wine.xlsx'
+    )
     args = parser.parse_args()
     parser.parse_args()
 
