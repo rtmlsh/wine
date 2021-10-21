@@ -1,4 +1,5 @@
 import argparse
+
 import collections
 import datetime
 from http.server import HTTPServer, SimpleHTTPRequestHandler
@@ -21,14 +22,13 @@ if __name__ == '__main__':
     args = parser.parse_args()
     parser.parse_args()
 
+    foundation_year = 1920
+
     env = Environment(
         loader=FileSystemLoader('.'),
         autoescape=select_autoescape(['html', 'xml'])
     )
-
     template = env.get_template('template.html')
-
-    foundation_year = 1920
 
     goods_specification = pandas.read_excel(
         args.path,
@@ -42,7 +42,6 @@ if __name__ == '__main__':
         winery_age=datetime.date.today().year - foundation_year,
         store_goods=store_goods
     )
-
     with open('index.html', 'w', encoding="utf8") as file:
         file.write(rendered_page)
 
