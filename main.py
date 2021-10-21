@@ -17,6 +17,8 @@ def get_goods_description(goods_specification):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Скрипт запускает сайт интернет-магазина')
+    parser.add_argument('--path', help='Укажите свой путь до базы данных', default='wine.xlsx')
+    args = parser.parse_args()
     parser.parse_args()
 
     env = Environment(
@@ -29,7 +31,7 @@ if __name__ == '__main__':
     foundation_year = 1920
 
     goods_specification = pandas.read_excel(
-        'wine.xlsx',
+        args.path,
         usecols=['Категория', 'Название', 'Сорт', 'Цена', 'Картинка', 'Акция'],
         na_values=['N/A', 'NA'],
         keep_default_na=False
