@@ -115,26 +115,26 @@
         </div>
         {%  for wine_category, drink in store_goods.items()  %}
         <div class="col-12 section-title text-center mb-5">
-        <h2 class="d-block">{{wine_category}}</h2>
+        <h2 class="d-block">{{  wine_category  }}</h2>
         </div>
         <div class="row">
           {%  for drink_specification in drink  %}
           <div class="col-lg-4 mb-5 col-md-6">
             <div class="wine_v_1 text-center pb-4 pt-5">
-              <img src="images/{{drink_specification.Картинка}}" alt="Image" class="img-fluid">
+              <img src="images/{{  drink_specification.Картинка  }}" alt="Image" class="img-fluid">
               {%  if drink_specification.Акция  %}
               <img src="assets/profitable.png" style="width:10rem;height: 10rem;position:absolute;right: -20px;top: -20px;">
               {%  endif  %}
               <div>
-                <h3 class="heading mt-3 mb-3 text-dark">{{drink_specification.Название}}</h3>
+                <h3 class="heading mt-3 mb-3 text-dark">{{  drink_specification.Название  }}</h3>
                 {%  if drink_specification.Сорт  %}
                 <p>
-                  Сорт винограда: {{drink_specification.Сорт}}<br/>
-                  <span class="price">Цена: {{drink_specification.Цена}} р.</span>
+                  Сорт винограда: {{  drink_specification.Сорт  }}<br/>
+                  <span class="price">Цена: {{  drink_specification.Цена  }} р.</span>
                 </p>
                 {%  else  %}
                 <p>
-                  <span class="price">Цена: {{drink_specification.Цена}} р.</span>
+                  <span class="price">Цена: {{  drink_specification.Цена  }} р.</span>
                 </p>
                 {%  endif  %}
               </div>
@@ -153,7 +153,7 @@
         <div class="row justify-content-center text-center align-items-center">
           <div class="col-md-8">
             <h2 style="font-size: 3rem;">проверено временем</h2>
-            <span class="sub-title" style="font-size: 2.5rem;">Уже {{winery_age}} год с вами</span>
+            <span class="sub-title" style="font-size: 2.5rem;">Уже {{  winery_age  }} год с вами</span>
           </div>
         </div>
       </div>
