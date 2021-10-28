@@ -115,9 +115,9 @@
         </div>
       {%  for wine_category, drink in store_goods.items()  %}
         <div class="col-12 section-title text-center mb-5">
-        <h2 class="d-block">
-      {{  wine_category  }}
-        </h2>
+          <h2 class="d-block">
+            {{  wine_category  }}
+          </h2>
         </div>
         <div class="row">
         {%  for drink_specification in drink  %}
@@ -129,7 +129,7 @@
             {%  endif  %}
               <div>
                 <h3 class="heading mt-3 mb-3 text-dark">
-                {{  drink_specification.Название  }}
+                  {{  drink_specification.Название  }}
                 </h3>
               {%  if drink_specification.Сорт  %}
                 <p>
